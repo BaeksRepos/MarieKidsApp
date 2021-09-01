@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MarieKidsApp</string>
+
+    <string name="naver_client_id">mXwvu5wnV7M4f3aCpLgK</string>
+    <string name="naver_client_secret">m9sZhejkcH</string>
+    <string name="naver_client_name">마리앤키즈</string>
+
+    <string name="marie_url">https://smartstore.naver.com/marie_kids?</string>
+</resources>
