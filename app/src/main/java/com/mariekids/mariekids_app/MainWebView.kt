@@ -72,6 +72,11 @@ class MainWebView : AppCompatActivity() {
                     startActivity(intent);
                 return true;
             }
+            else if(url != null && !url.contains("marie_kids")){
+                val chngeUrl = getString(R.string.marie_url);
+                view!!.loadUrl(chngeUrl);
+                return true;
+            }
 
             view!!.loadUrl(url!!);
             return false;

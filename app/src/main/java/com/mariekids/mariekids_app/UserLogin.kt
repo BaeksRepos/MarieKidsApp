@@ -1,6 +1,7 @@
 package com.mariekids.mariekids_app
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.mariekids.mariekids_app.databinding.ActivityUserLoginBinding
@@ -30,9 +31,7 @@ class UserLogin : AppCompatActivity() {
         clientID = getString(R.string.naver_client_id);
         clientPW = getString(R.string.naver_client_secret);
         clientName = getString(R.string.naver_client_name);
-
     }
-
 
     private fun initLogin(){
         loginInstance = OAuthLogin.getInstance();
@@ -41,12 +40,14 @@ class UserLogin : AppCompatActivity() {
         naverLogin.setOAuthLoginHandler(loginAuthHandler())
     }
 
-
     inner class loginAuthHandler() : OAuthLoginHandler(){
         override fun run(p0: Boolean) {
             if(p0){
                 val tokent = loginInstance.getAccessToken(_context);
                 val refresh = loginInstance.getRefreshToken(_context);
+
+                val intent = Intent(this@UserLogin, MainWebView::class.java);
+                startActivity(intent);
             }
         }
     }

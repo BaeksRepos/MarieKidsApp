@@ -14,12 +14,6 @@
             android:exported="true" />
         <activity
             android:name=".UserLogin"
-            android:exported="true" />
-        <activity
-            android:name=".userLogin"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
