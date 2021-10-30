@@ -32,7 +32,8 @@ class MainWebView : AppCompatActivity() {
         cookieManager.setAcceptCookie(true);
 
 
-        webView.loadUrl(getString(R.string.marie_url));
+       // webView.loadUrl(getString(R.string.marie_url));
+        webView.loadUrl("https://nid.naver.com/nidlogin.login?svctype=262144&mode=form&url=https%3A%2F%2Fm.smartstore.naver.com%2Fmarie_kids%2Fsidemenu%3FprevUrl%3D%252Fmarie_kids");
     }
 
     override fun onBackPressed() {
@@ -72,12 +73,11 @@ class MainWebView : AppCompatActivity() {
                     startActivity(intent);
                 return true;
             }
-            else if(url != null && !url.contains("marie_kids")){
+            else if(url != null && url.equals("http://m.naver.com/")){
                 val chngeUrl = getString(R.string.marie_url);
                 view!!.loadUrl(chngeUrl);
                 return true;
             }
-
             view!!.loadUrl(url!!);
             return false;
         }
